@@ -37,7 +37,7 @@ if node.platform_family == 'debian'
   include_recipe 'apt::default'
   execute 'apt-get update'
 end
-%w(g++ mysql-client libmysqlclient-dev python-dev).each do |pkg|
+%w(ntp g++ mysql-client libmysqlclient-dev python-dev).each do |pkg|
   package pkg do
     action [:install, :upgrade]
   end
